@@ -30,6 +30,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # gem 'unicorn'
 gem 'devise'
 gem 'bcrypt', '~> 3.1.9'
+gem 'shoulda', '~> 3.5.0'
 
 
 
@@ -39,6 +40,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'factory_girl_rails'
   gem 'capybara'
+  gem 'guard'
   gem 'guard-rspec'
   gem 'spring-commands-rspec'
   gem 'vcr'
