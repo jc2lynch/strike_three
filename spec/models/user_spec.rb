@@ -7,7 +7,8 @@ RSpec.describe User, type: :model do
 			expect(u.save).to eq true	
 		end
 		it { should have_many(:picks) }
-		it { should validate_presence_of(:name) }
+		it { should validate_presence_of(:first_name) }
+		it { should validate_presence_of(:last_name) }
 		it { should validate_presence_of(:email) }
 	end
 

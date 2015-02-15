@@ -1,4 +1,4 @@
 class Pick < ActiveRecord::Base
 	belongs_to :user
-  has_many :teams
+  belongs_to :team
 end
