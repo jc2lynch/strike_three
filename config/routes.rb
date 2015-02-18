@@ -1,13 +1,14 @@
 Rails.application.routes.draw do
 
-  root 'users#index'
-  resources :users, only:[:index, :show, :create]
+  root 'welcome#index'
+  resources :users #, only:[:index, :show, :create]
   get '/signup' => 'users#new'
+  resources :picks
 
-  namespace :api, defaults: {format: :json} do 
-    resources :picks
-    resources :leagues
+  resources :leagues do
+  	patch 'join', on: :member
   end
+  
 
 
   get '/login'     => 'sessions#new'

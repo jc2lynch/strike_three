@@ -1,0 +1,8 @@
+
+<h1><%= @league.name %></h1>
+<%= link_to "join League", join_league_path(@league), method: :patch %>
+
+<% @league.users.each do |user| %>
+<%= user.first_name %>
+<% end %>
+
