@@ -1,0 +1,10 @@
+<!-- loop through the leagues -->
+<!-- have a link to allow users to join that league -->
+
+<h1>Leagues</h1>
+<ul>
+	<% @leagues.each do |league| %>
+		<li><%= league.name %></li>
+	<% end %>
+</ul>
+

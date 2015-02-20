@@ -13,7 +13,7 @@ class LeaguesController < ApplicationController
 	end
 
 	def create
-		@league = League.new(user_params)
+		@league = League.new(league_params)
 			if @league.save
 				redirect_to users_path
 			else
@@ -21,21 +21,19 @@ class LeaguesController < ApplicationController
 			end
 		
 	end
+
+
 	def join
 		#some code to add a user to a league
 		# creating a variable @league and setting it equal to this 
 		@league = League.find(params[:id])
 		@league.users.push(current_user)
 		@league.save
-		redirect_to league_path(@league)
-
-
-		
+		redirect_to league_path(@league)	
 	end
 
 	def destroy
 		# remove a league from existance
-		
 	end
 
 	def show
@@ -43,5 +41,12 @@ class LeaguesController < ApplicationController
 		@league = League.find(params[:id])
 		
 	end
+
+	private
+
+	def league_params
+		params.require(:league).permit(:name)
+	end
+
 end
 

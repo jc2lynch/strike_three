@@ -1,1 +1,16 @@
-<h1>welcome to the pick.new page, where current user will be able to make a new pick in the current league</h1>
+<h1>Make your Pick for <%= @league.name %></h1>
+
+
+
+<%= form_for [@league, @pick] do |p| %> 
+	<div>
+	<%= p.label :team %>
+	<%= p.collection_select :team, @teams, :id, :name %>
+	</div>
+	<div>
+		<%= p.submit %>
+	</div>
+
+	
+<!-- this is a new pick for this league  this has to do with routing  -->
+<% end %>

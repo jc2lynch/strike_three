@@ -3,9 +3,10 @@ Rails.application.routes.draw do
   root 'welcome#index'
   resources :users #, only:[:index, :show, :create]
   get '/signup' => 'users#new'
-  resources :picks
+  
 
   resources :leagues do
+    resources :picks
   	patch 'join', on: :member
   end
   
