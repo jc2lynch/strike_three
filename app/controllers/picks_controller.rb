@@ -16,9 +16,14 @@ class PicksController < ApplicationController
 			@pick = Pick.new(pick_params)
 			@pick.user = current_user
 			@pick.league =League.find(params[:league_id])
-			@league = @pick.league
-			@pick.save
+			if @pick.save 
+				redirect_to user_path(current_user)
+			else
+			 redirect_to new_league_pick
+			end
+
 		end
+
 
 		def pick_params
 			# these are the paramaters required for a pick

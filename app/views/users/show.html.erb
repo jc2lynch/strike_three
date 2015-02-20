@@ -1,7 +1,8 @@
-<h1>Hello current user welcome to your home page where you can see your profile picture and tell us about yourself</h1>
+
 <%= "Hello #{current_user.first_name}" %>
 <!-- create a form where the user can create a bio  -->
 
+<h1>Below is a list of all the leagus you belong to.</h1>
 	<ul>
 	<% @user.leagues.each do |l| %>
 
