@@ -1,2 +1,10 @@
 <h1>Hello current user welcome to your home page where you can see your profile picture and tell us about yourself</h1>
-<%= link_to %>
+<%= "Hello #{current_user.first_name}" %>
+<!-- create a form where the user can create a bio  -->
+
+	<ul>
+	<% @user.leagues.each do |l| %>
+
+	<li><%=  l.name %> </li> 
+	<% end %>
+	</ul>

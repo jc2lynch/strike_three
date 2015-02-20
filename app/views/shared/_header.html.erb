@@ -1,16 +1,19 @@
-<%  if current_user %>
-<!-- ends user session -->
-<%= link_to 'Log Out', logout_path, method: :delete %>
-<!-- allows users to create league and saves it into db -->
-<%= link_to 'Create League', new_league_path %>
-<!-- list of all leagues -->
-<%= link_to 'Join League', leagues_path %>
-<!-- leagues that current user already belongs to -->
-<%= link_to 'My Leagues', leagues_path %>
+<div class="header">
+	<%  if current_user %>
+	<!-- ends user session -->
+	<%= link_to 'Log Out', logout_path, method: :delete %>
+	<!-- allows users to create league and saves it into db -->
+	<%= link_to 'Create League', new_league_path %>
+	<!-- list of all leagues -->
+	<%= link_to 'Join League', leagues_path %>
+	<!-- leagues that current user already belongs to -->
+	<!-- user home -->
+	<%= link_to 'Home', user_path(current_user) %>
 
-	
-<p>hi	<%=current_user.first_name%> </p>
+		
+	<p>hi	<%=current_user.first_name%> </p>
 
 
 
-<% end %>
+	<% end %>
+</div>
